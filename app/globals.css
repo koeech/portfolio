@@ -1,0 +1,16 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth}
+body{@apply bg-mist text-ink antialiased;background-image:radial-gradient(60rem 40rem at 8% -10%,#e2dcfc,transparent 60%),radial-gradient(50rem 40rem at 100% 8%,#d3f0fa,transparent 55%),radial-gradient(50rem 36rem at 50% 100%,#e9e4fb,transparent 60%);background-attachment:fixed}
+@layer components{
+.glass{@apply rounded-3xl border border-white/70 bg-white/55 shadow-[0_10px_34px_-14px_rgba(76,60,160,.22)] backdrop-blur-xl}
+.lift{@apply transition duration-300 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_20px_46px_-16px_rgba(76,60,160,.32)]}
+.eyebrow{@apply text-sm font-semibold text-violet}
+.btn{@apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition duration-300 hover:-translate-y-0.5}
+.chip{@apply rounded-full border border-violet/15 bg-white/70 px-3 py-1 text-xs font-medium text-ink/75}
+}
+:focus-visible{outline:2px solid #5b4bd6;outline-offset:3px;border-radius:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+.spin-slow{animation:spin 60s linear infinite;transform-origin:200px 200px}
+.float{animation:float 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
