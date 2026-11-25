@@ -6,7 +6,7 @@ export const nav = [
 ];
 export const me = {
   name: "ANTHONY KIPKOECH", title: "Computer Security & Forensics Student",
-  email: "anthonykoec332@gmail.com", github: "https://github.com/exroot-01", linkedin: "https://www.linkedin.com/in/koech", phone: "+254 791387787",
+  email: "anthonykoec332@gmail.com", github: "https://github.com/koeech", linkedin: "https://www.linkedin.com/in/anthony-kipkoech-42970b39b/", phone: "+254 791387787",
 };
 export const highlights = [
   ["01", "Security mindset", "I look at every system the way an attacker would, then build the way a defender must."],
