@@ -1,4 +1,4 @@
-# Anthony Kipkoech Portfolio
+# Portfolio
 Next.js 14 + TypeScript + Tailwind + Framer Motion.
 
     npm install && npm run dev
