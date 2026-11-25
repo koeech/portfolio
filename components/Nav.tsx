@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { nav } from "@/lib/content";
+import ThemeToggle from "./ThemeToggle"
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
@@ -20,10 +21,13 @@ export default function Nav() {
       <nav aria-label="Primary" className="glass mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5">
         <a href="#home" aria-label="Anthony Kipkoech, home" className="grid h-10 w-10 place-items-center rounded-2xl bg-ink text-sm font-bold text-white">AK</a>
         <div className="hidden items-center gap-0.5 lg:flex">{nav.map((n) => link(n))}</div>
+        <div className="flex items-center gap-1">
+        <ThemeToggle />
         <a href="#contact" className="btn hidden bg-ink text-white lg:inline-flex">Let’s connect <ArrowUpRight size={16} aria-hidden /></a>
         <button className="grid h-10 w-10 place-items-center rounded-full lg:hidden" aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
+        {open ? <X /> : <Menu />}
         </button>
+        </div>
       </nav>
       <AnimatePresence>
         {open && (

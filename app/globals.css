@@ -14,3 +14,12 @@ body{@apply bg-mist text-ink antialiased;background-image:radial-gradient(60rem 
 .spin-slow{animation:spin 60s linear infinite;transform-origin:200px 200px}
 .float{animation:float 6s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+:root{--ink:20 19 31;--violet:91 75 214;--sky:14 134 180;--mist:244 244 251}
+[data-theme=dark]{--ink:232 232 246;--violet:169 156 255;--sky:111 211 245;--mist:11 12 22;color-scheme:dark}
+[data-theme=dark] body{background-image:radial-gradient(60rem 40rem at 8% -10%,#2a2170,transparent 60%),radial-gradient(50rem 40rem at 100% 8%,#0b4f6b,transparent 55%),radial-gradient(50rem 36rem at 50% 100%,#1c1650,transparent 60%)}
+[data-theme=dark] .glass{@apply border-white/10 bg-white/[.06] shadow-[0_10px_40px_-12px_rgba(0,0,0,.6)]}
+[data-theme=dark] .lift:hover{background:rgba(255,255,255,.11)}
+[data-theme=dark] .chip,[data-theme=dark] .bg-white\/40,[data-theme=dark] .bg-white\/60,[data-theme=dark] .bg-white\/70{background:rgba(255,255,255,.08)}
+[data-theme=dark] .bg-white{background:rgba(255,255,255,.14)}
+[data-theme=dark] .bg-ink{background:#6d5df0}
+[data-theme=dark] input,[data-theme=dark] textarea{border-color:rgba(255,255,255,.14);color:#fff}

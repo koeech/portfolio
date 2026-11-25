@@ -14,9 +14,9 @@ export function About() {
           </div>
         </Reveal>
         <Reveal delay={0.1} className="glass p-7 sm:p-9">
-          <p className="text-lg text-ink/80">I’m a Computer Security & Forensics student who enjoys analysing problems, understanding digital evidence and building secure solutions. My coursework and home labs have taught me that good security starts with careful observation, and good investigations start with disciplined habits.</p>
+          <p className="text-lg text-ink/80">Most of what I know about security, I learned by breaking things on purpose in labs built for it. I study how systems fail, how an attacker moves through a network, and how an investigator rebuilds events from logs, metadata and disk images, so the evidence still stands when someone challenges it.</p>
           <h3 className="mt-6 font-semibold">What drives me</h3>
-          <p className="mt-2 text-ink/75">Trust. People rely on systems they cannot see, and I want to be someone who makes that trust deserved, whether by hardening a setup, tracing an incident, or explaining a risk in plain words.</p>
+          <p className="mt-2 text-ink/75">The moment scattered artefacts become a clear timeline. That discipline, which is careful, repeatable and honest about what the evidence does and doesn’t show, is what I want to bring to defensive security and to every tool I build.</p>
           <dl className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {metrics.map(([v, l]) => (<div key={l} className="rounded-2xl bg-white/60 p-4"><dt className="sr-only">{l}</dt><dd className="text-2xl font-semibold">{v}</dd><dd className="text-xs text-ink/65">{l}</dd></div>))}
           </dl>
@@ -79,6 +79,11 @@ export function Projects() {
                 <a href="#contact" className="inline-flex items-center gap-1 hover:underline">Case study <ArrowUpRight size={14} aria-hidden /></a>
                 <a href={me.github} className="inline-flex items-center gap-1 hover:underline">GitHub <Github size={14} aria-hidden /></a>
               </div>
+              <div aria-hidden className="relative mt-4 h-28 overflow-hidden rounded-2xl bg-gradient-to-br from-violet/15 to-sky/20 p-3 transition duration-500 group-hover:scale-[1.03]">
+              <div className="flex h-full items-end gap-1.5">
+             {[40, 65, 50, 85, 60, 95, 70].map((_, k, a) => <span key={k} style={{ height: `${a[(k + i) % 7]}%` }} className="flex-1 rounded-t-md bg-white/70 transition-all duration-500 group-hover:bg-violet/60" />)}
+              </div>
+              </div>
             </article>
           </Reveal>
         ))}
@@ -106,7 +111,7 @@ export function Journey() {
 
 export function Certs() {
   return (
-    <Section id="certifications" eyebrow="Credentials" title="Certifications and milestones, with room to grow." intro="Items marked as targets or open slots are placeholders for future additions.">
+    <Section id="certifications" eyebrow="Learning milestones" title="Technical growth, documented honestly." intro="Formal certifications are on the roadmap. These milestones show what I’m already practising.">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certs.map((c, i) => (
           <Reveal key={c.t} delay={(i % 3) * 0.06}>
@@ -137,37 +142,40 @@ export function Process() {
 
 export function Testimonials() {
   return (
-    <Section id="recommendations" eyebrow="Recommendations" title="What people say about working with me." intro="Sample quotes shown as placeholders until real recommendations are added.">
-      <div tabIndex={0} aria-label="Testimonials, scroll horizontally" className="-mx-5 flex snap-x gap-5 overflow-x-auto px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
+    <section id="recommendations" aria-labelledby="rec-h" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-10">
+      <h2 id="rec-h" className="text-lg font-semibold">Kind words <span className="font-normal text-ink/60">(sample placeholders)</span></h2>
+      <div tabIndex={0} aria-label="Testimonials, scroll horizontally" className="mt-4 flex snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-4 md:overflow-visible">
         {quotes.map(([q, r]) => (
-          <figure key={r} className="glass lift min-w-[82%] snap-center p-6 sm:min-w-[45%] md:min-w-0">
-            <Quote size={20} className="text-violet" aria-hidden />
-            <blockquote className="mt-3 text-sm text-ink/80">{q}</blockquote>
-            <figcaption className="mt-4 text-sm font-semibold">{r}</figcaption>
+          <figure key={r} className="min-w-[75%] snap-center rounded-2xl border border-white/60 bg-white/40 p-4 text-sm md:min-w-0">
+            <blockquote className="text-ink/75">{q}</blockquote>
+            <figcaption className="mt-3 text-xs font-semibold">{r}</figcaption>
           </figure>
         ))}
       </div>
-    </Section>
+    </section>
   );
 }
-
 export function Insights() {
   return (
-    <Section id="insights" eyebrow="Insights" title="Notes from my studies, shared openly.">
+    <Section id="insights" eyebrow="Insights" title="A notebook in progress." intro="I’m writing up what I learn in the lab. The first notes are in draft.">
       <div className="grid gap-5 sm:grid-cols-2">
         {posts.map(([c, t, m], i) => (
           <Reveal key={t} delay={(i % 2) * 0.07}>
             <article className="glass lift flex h-full items-start gap-4 p-6">
               <IconBox><BookOpen size={20} /></IconBox>
-              <div><p className="text-sm font-semibold text-violet">{c}</p><h3 className="mt-1 font-semibold">{t}</h3><p className="mt-2 text-xs text-ink/65">{m} · Coming soon</p></div>
+              <div>
+                <p className="text-sm font-semibold text-violet">{c}</p>
+                <h3 className="mt-1 font-semibold">{t}</h3>
+                <p className="mt-2 flex items-center gap-2 text-xs text-ink/65"><span className="h-1.5 w-1.5 rounded-full bg-violet" aria-hidden />In draft, {m}</p>
+              </div>
             </article>
           </Reveal>
         ))}
       </div>
+      <p className="mt-6 text-sm text-ink/70">Want to know when the first note goes up? <a href="#contact" className="font-medium text-violet underline-offset-4 hover:underline">Send me a message</a>.</p>
     </Section>
   );
 }
-
 export function Contact() {
   const [sent, setSent] = useState(false);
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
